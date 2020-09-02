@@ -31,13 +31,14 @@ const database = {
     //     }
     // ]
 }
-App.get('/', (req, res) => {
-    res.send(database.users);
-})
-App.use(bodyParser.json());
 
 App.use(cors())
+App.use(bodyParser.json());
 
+App.get('/', (req, res) => {
+
+    res.send(database.users);
+})
 
 App.post('/signin', (req, res) => {
 
